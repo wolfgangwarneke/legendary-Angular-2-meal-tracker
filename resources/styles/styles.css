@@ -33,6 +33,8 @@ input {
   background-color: rgba(200, 200, 255, 0.4);
   border-top-left-radius: 5px;
   border-bottom-right-radius: 9px;
+  height: 38px;
+  padding-left: 13px;
 }
 
 button {
