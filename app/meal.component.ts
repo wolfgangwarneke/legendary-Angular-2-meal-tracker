@@ -1,16 +1,18 @@
 import { Component } from 'angular2/core';
 import { Meal } from './meal.model';
 import { EditMealFoodComponent } from './edit-meal-food.component';
+import { EditMealNotesComponent } from './edit-meal-notes.component';
 
 @Component({
   selector: 'meal-display',
   inputs: ['meal', 'selected'],
-  directives: [EditMealFoodComponent],
+  directives: [EditMealFoodComponent, EditMealNotesComponent],
   template: `
     <div>
     <h1>{{ meal.food }} ??? <span *ngIf="meal === selected" (click)="startOrStopEditing()" [class.editButton]="true">{{ editMessage }}</span></h1>
     <edit-meal-food *ngIf="editing" [meal]="meal"></edit-meal-food>
     <h2>Notes: {{ meal.notes }}</h2>
+    <edit-meal-notes *ngIf="editing" [meal]="meal"></edit-meal-notes>
     <h3>Calories: {{ meal.calories }}</h3>
     </div>
   `
