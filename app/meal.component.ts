@@ -10,7 +10,7 @@ import { EditMealCaloriesComponent } from './edit-meal-calories.component';
   directives: [EditMealFoodComponent, EditMealNotesComponent, EditMealCaloriesComponent],
   template: `
     <div>
-    <h1>{{ meal.food }} >--{-(}:| "yum!" <span *ngIf="meal === selected" (click)="startOrStopEditing()" [class.editButton]="true">{{ editMessage }}</span></h1>
+    <h1>{{ meal.food }} >--{-(}:|] "yum!" <span *ngIf="meal === selected" (click)="startOrStopEditing()" [class.editButton]="true">{{ editMessage }}</span></h1>
     <edit-meal-food *ngIf="editing" [meal]="meal"></edit-meal-food>
     <h2><span class="deetsButton">Notes:</span> {{ meal.notes }}</h2>
     <edit-meal-notes *ngIf="editing" [meal]="meal"></edit-meal-notes>
