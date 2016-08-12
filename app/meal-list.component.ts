@@ -2,6 +2,7 @@ import { Component, EventEmitter } from 'angular2/core';
 import { Meal } from './meal.model';
 import { MealComponent } from './meal.component';
 
+
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
@@ -11,7 +12,7 @@ import { MealComponent } from './meal.component';
   <meal-display *ngFor="#currentMeal of mealList"
     (click)="mealClicked(currentMeal)"
     [class.selected]="currentMeal === selectedMeal"
-    [meal]="currentMeal">
+    [meal]="currentMeal" [selected]="selectedMeal">
   </meal-display>
   `
 })

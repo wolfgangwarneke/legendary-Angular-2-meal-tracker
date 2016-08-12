@@ -15,3 +15,12 @@ h1 {
   text-decoration: none;
   text-shadow: 2px 2px 3px black;
 }
+
+.editButton {
+  border: 1px solid navy;
+  border-radius: 15px;
+  padding: 5px;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+}
