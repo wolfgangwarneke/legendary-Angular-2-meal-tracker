@@ -5,7 +5,7 @@ import {Meal} from './meal.model';
   selector: 'new-meal',
   outputs: ['onCreateNewMeal'],
   template: `
-  <h3>Log New Meal:</h3>
+  <h3 id="logLogo">Log New Meal:</h3>
   <input type="text" placeholder="meal food..." value="" (click)="removeWarning(food)" #food>
   <input type="text" placeholder="notes about it?" value="" #notes>
   <label for="calories">Calories:</label>
