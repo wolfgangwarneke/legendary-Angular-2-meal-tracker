@@ -29,6 +29,12 @@ h1 {
   font-family: serif;
 }
 
+#selectionMenu {
+  margin-top: 20px;
+  margin-left: 5px;
+  background: rgba(255, 200, 200, .6);
+}
+
 input {
   background-color: rgba(200, 200, 255, 0.4);
   border-top-left-radius: 5px;

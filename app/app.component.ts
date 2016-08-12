@@ -19,10 +19,11 @@ export class AppComponent {
   public meals: Meal[];
   constructor(){
     this.meals = [
-      new Meal("hamburger", "so good", 900, 0),
+      new Meal("salad", "it was alright", 130, 0),
       new Meal("cheezeburger", "so so good", 1000, 1),
-      new Meal("franks and beans", "yum yum", 1400, 2),
-      new Meal("cookies", "om nom nom", 808, 3)
+      new Meal("franks and beans", "yum yum yum", 1400, 2),
+      new Meal("miniature cookies", "om nom nom", 450, 3),
+      new Meal("tons of Cheetos", "pretty gross....", 1200, 4)
     ]
   }
   mealWasSelected(clickedMeal: Meal): void {

@@ -22,7 +22,6 @@ export class NewMealComponent {
   addMeal(food: HTMLInputElement, note: HTMLInputElement, cals: HTMLInputElement){
     console.log(food.value);
     if (food.value !== "" && food.value !== "FEED ME SEYMOUR") {
-      alert('nice new meal');
       this.args.push(food.value);
       this.args.push(note.value);
       this.args.push(cals.value);
