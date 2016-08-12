@@ -14,14 +14,23 @@ import {Meal} from './meal.model';
   `
 })
 export class NewMealComponent {
-  public onCreateNewMeal: EventEmitter<Meal>;
+  public onCreateNewMeal: EventEmitter<string[]>;
+  public args: string[] = [];
   constructor(){
     this.onCreateNewMeal = new EventEmitter();
   }
   addMeal(food: HTMLInputElement, note: HTMLInputElement, cals: HTMLInputElement){
     console.log(food.value);
     if (food.value !== "" && food.value !== "FEED ME SEYMOUR") {
-      alert("NICE NEW MEAL");
+      alert('nice new meal');
+      this.args.push(food.value);
+      this.args.push(note.value);
+      this.args.push(cals.value);
+      this.onCreateNewMeal.emit(this.args);
+      food.value = "";
+      note.value = "";
+      cals.value = "500";
+      this.args = [];
     } else {
       food.value = "FEED ME SEYMOUR";
       food.id = "warning";

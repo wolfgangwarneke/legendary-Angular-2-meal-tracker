@@ -10,7 +10,7 @@ import { NewMealComponent } from './new-meal.component';
   outputs: ['onMealSelect'],
   directives: [MealComponent, NewMealComponent],
   template: `
-  <new-meal></new-meal>
+  <new-meal (onCreateNewMeal)="createMeal($event)"></new-meal>
   <meal-display *ngFor="#currentMeal of mealList"
     (click)="mealClicked(currentMeal)"
     [class.selected]="currentMeal === selectedMeal"
@@ -29,5 +29,10 @@ export class MealListComponent {
     console.log('in meal-list component', clickedMeal);
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
+  }
+  createMeal(args: string[]): void {
+    this.mealList.push(
+      new Meal(args[0], args[1], Number(args[2]), this.mealList.length)
+    );
   }
 }
