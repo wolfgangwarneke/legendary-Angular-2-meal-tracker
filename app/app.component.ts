@@ -6,7 +6,7 @@ import { Component, EventEmitter } from 'angular2/core';
   template: `
     <div class="container">
       <h1>Meal Tracker</h1>
-      <h3 *ngFor="#meal of meals">{{ meal.food }} had {{ meal.calories }} calories</h3>
+      <h3 *ngFor="#meal of meals" (click)="mealWasSelected(meal)">{{ meal.food }} had {{ meal.calories }} calories</h3>
     <div>
   `
 })
@@ -19,6 +19,9 @@ export class AppComponent {
       new Meal("franks and beans", "yum yum", 1400, 2),
       new Meal("cookies", "om nom nom", 808, 3)
     ]
+  }
+  mealWasSelected(clickedMeal: Meal): void {
+    console.log(clickedMeal);
   }
 }
 
