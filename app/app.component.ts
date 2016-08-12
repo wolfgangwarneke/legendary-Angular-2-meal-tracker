@@ -4,11 +4,14 @@ import { MealListComponent } from './meal-list.component';
 
 @Component({
   selector: 'my-app',
-  directives: [],
+  directives: [MealListComponent],
   template: `
     <div class="container">
-      <h1>Meal Tracker</h1>
-      <h3 *ngFor="#meal of meals" (click)="mealWasSelected(meal)">{{ meal.food }} had {{ meal.calories }} calories</h3>
+      <h1>Meal Tracker</h1><hr>
+      <meal-list
+        [mealList]="meals"
+        (onMealSelect)="mealWasSelected($event)">
+      </meal-list>
     <div>
   `
 })
@@ -23,6 +26,6 @@ export class AppComponent {
     ]
   }
   mealWasSelected(clickedMeal: Meal): void {
-    console.log(clickedMeal);
+    console.log('in app component', clickedMeal);
   }
 }

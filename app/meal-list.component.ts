@@ -8,11 +8,11 @@ import { MealComponent } from './meal.component';
   outputs: ['onMealSelect'],
   directives: [MealComponent],
   template: `
-  <task-display *ngFor="#currentTask of taskList"
-    (click)="taskClicked(currentTask)"
-    [class.selected]="currentTask === selectedTask"
-    [task]="currentTask">
-  </task-display>
+  <meal-display *ngFor="#currentMeal of mealList"
+    (click)="mealClicked(currentMeal)"
+    [class.selected]="currentMeal === selectedMeal"
+    [meal]="currentMeal">
+  </meal-display>
   `
 })
 export class MealListComponent {
@@ -23,7 +23,7 @@ export class MealListComponent {
     this.onMealSelect = new EventEmitter();
   }
   mealClicked(clickedMeal: Meal): void {
-    console.log('child', clickedMeal);
+    console.log('in meal-list component', clickedMeal);
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
