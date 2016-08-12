@@ -6,14 +6,19 @@ import { Component, EventEmitter } from 'angular2/core';
   template: `
     <div class="container">
       <h1>Meal Tracker</h1>
-      <h3>{{ meal.food }}<h3>
+      <h3 *ngFor="#meal of meals">{{ meal.food }} had {{ meal.calories }} calories</h3>
     <div>
   `
 })
 export class AppComponent {
-  public meal: Meal;
+  public meals: Meal[];
   constructor(){
-    this.meal = new Meal("hamburger", "so good", 900, 0);
+    this.meals = [
+      new Meal("hamburger", "so good", 900, 0),
+      new Meal("cheezeburger", "so so good", 1000, 1),
+      new Meal("franks and beans", "yum yum", 1400, 2),
+      new Meal("cookies", "om nom nom", 808, 3)
+    ]
   }
 }
 
