@@ -6,6 +6,7 @@ import {Meal} from './meal.model';
   inputs: ['meal'],
   template: `
   <h3>Edit {{ meal.food }}</h3>
+  <input [(ngModel)]="meal.food"/>
   `
 })
 export class EditMealFoodComponent {

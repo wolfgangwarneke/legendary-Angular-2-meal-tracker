@@ -20,7 +20,6 @@ export class MealComponent {
   public editing: boolean = false;
   public editMessage: string = "edit";
   startOrStopEditing(){
-    alert('click clack!');
     if (this.editing === false) {
       this.editing = true;
       this.editMessage = "don't edit";
