@@ -29,6 +29,7 @@ One must keep track of the meal one eats.  One must count those calories.  One m
 ## Known Bugs
 
 _Y'can't delete a meal (yet such as it is in real life)._
+
 _When y'editing a meal, edit fields stay open unless manually closed, which is a poor user experience, admittedly._
 
 ## Support and contact details
